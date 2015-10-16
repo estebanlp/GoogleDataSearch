@@ -1,0 +1,16 @@
+{
+    "contents" : "\\name{GoogleNearbySearch}\n\\alias{GoogleNearbySearch}\n%- Also NEED an '\\alias' for EACH other topic documented here.\n\\title{\nSearch in Google Maps Nearby an Specific Location\n}\n\\description{\nCreates a \\code{data.frame} object with the output of a query in Google Maps of places of given types nearby a given location.\n\nUser must have a valid API key from Google Places API Web Service to make this function work. For more information go to: \\href{https://developers.google.com/places/web-service}{https://developers.google.com/places/web-service}\n}\n\\usage{\nGoogleNearbySearch(query, lat, lon, radius, apikey)\n}\n\n\\arguments{\n  \\item{query}{\nIs a string object with an specific query as it would be ask in the search bar of Google Maps. \n}\n  \\item{lat}{\nLatitude coordinate of the specific place where to find the \\code{query} nearby.\n}\n  \\item{lon}{\nLongitude coordinate of the specific place where to find the \\code{query} nearby.\n}\n  \\item{radius}{\nRadius of search in meters. How nearby \\code{lat} and \\code{lon} should we search for \\code{query}?\n}\n  \\item{apikey}{\nYour API Key from  \\href{https://developers.google.com/places/web-service}{https://developers.google.com/places/web-service}\n}\n}\n\\details{\n%%  ~~ If necessary, more details than the description above ~~\n}\n\\value{\nThis function returns a \\code{data.frame} object with the search results of  \\code{query} nearby \\code{lat} and \\code{lon} within \\code{radius}\n%%  If it is a LIST, use\n%%  \\item{comp1 }{Description of 'comp1'}\n%%  \\item{comp2 }{Description of 'comp2'}\n%% ...\n}\n\\references{\n%% ~put references to the literature/web site here ~\n}\n\\author{\nEsteban Lopez\n}\n\\note{\n%%  ~~further notes~~\n}\n\n%% ~Make other sections like Warning with \\section{Warning }{....} ~\n\n\\seealso{\n%% ~~objects to See Also as \\code{\\link{help}}, ~~~\n}\n\\examples{\n\nmysearch<-GoogleNearbySearch(query=\"korean food\",lat=40.107336,lon=-88.226110,radius=500,apikey=\"yourAPIkeyhere\")\n}",
+    "created" : 1444969110727.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2964483038",
+    "id" : "AA010BF4",
+    "lastKnownWriteTime" : 1444971110,
+    "path" : "~/Developer/GoogleDataSearch/man/GoogleNearbySearch.Rd",
+    "project_path" : "man/GoogleNearbySearch.Rd",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_doc"
+}

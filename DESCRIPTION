@@ -1,0 +1,9 @@
+Package: GoogleDataSearch
+Type: Package
+Title: Dataframe building from Google Maps queries to allow for Spatial Economic Analysis
+Version: 1.0
+Date: 2015-10-15
+Author: Esteban Lopez
+Maintainer: Esteban Lopez <lopezoch@illinois.edu>
+Description: Provide functions that create data sets from different types of queries as it they were made on Google Maps.
+License: GNU Public License
