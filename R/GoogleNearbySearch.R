@@ -11,7 +11,8 @@ core<-"https://maps.googleapis.com/maps/api/place/textsearch/xml?query="
 corenext<-"https://maps.googleapis.com/maps/api/place/textsearch/xml?pagetoken="
 apikey<-paste0("&key=",as.character(apikey))
 
-for(p in 1:3){
+p<-1
+while(p <= 3){
 	if(p==1){
 		xml.url<-paste0(core,query,radius,location,apikey)	
 	} else {
@@ -50,9 +51,15 @@ for(p in 1:3){
 		eval(parse(text=paste0("DATA",p,"[(",i,"),]<-cbind(store_name,store_type,store_addr,store_lat,store_lon,store_rating)")))
 	}
 	next_page<-unclass(xmltop$children$next_page_token[[1]])[['value']]
+	if(p>1 & is.null(next_page)==TRUE){
+		p<-4
+		DATA3<-as.data.frame(matrix(0,stores,6))
+		names(DATA3)<-names(DATA1)
+	}
+	p<-p+1
 }
 DATA<-rbind(DATA1,DATA2,DATA3)
-DATA<-DATA1[which(DATA1[,1]!=0),]
+DATA<-DATA[which(DATA[,1]!=0),]
 return(DATA)
 rm(DATA,DATA1,DATA2,DATA3)
 }
