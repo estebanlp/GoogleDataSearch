@@ -1,4 +1,4 @@
-googleDis<- function(orilat,orilot,deslat,deslot,mode){
+GoogleDisMatrix<- function(orilat,orilot,deslat,deslot,mode){
   require(XML)
   
   origin<-paste0(orilat,',',orilot)
