@@ -1,5 +1,6 @@
 GoogleDisMatrix<- function(orilat,orilon,deslat,deslon,mode='driving',apikey=NULL,departure_time=NULL,arrival_time=NULL,transit_mode=NULL,transit_routing_preference=NULL){
-  require(XML)
+  requireNamespace("XML",quietly = TRUE)
+  requireNamespace("RCurl",quietly = TRUE)  
   
   origin<-paste0(orilat,',',orilon)
   destination<-paste0(deslat,',',deslon)
@@ -7,8 +8,8 @@ GoogleDisMatrix<- function(orilat,orilon,deslat,deslon,mode='driving',apikey=NUL
   
   xml.url <- paste0('http://maps.googleapis.com/maps/api/distancematrix/xml?origins=',origin,'&destinations=',destination,'&mode=',mode,'&sensor=false')
   
-  xmlfile <- xmlTreeParse(xml.url)
-  xmltop = xmlRoot(xmlfile)
+  xmlfile <- XML::xmlTreeParse(xml.url)
+  xmltop <- XML::xmlRoot(xmlfile)
   distance <- xmltop[['row']][[1]][['distance']][['value']][[1]]
   distance <- as.numeric(unclass(distance)[['value']])
   mts <- distance 
