@@ -16,7 +16,7 @@ GoogleDisMatrix<- function(orilat,orilon,deslat,deslon,mode='driving',apikey=NUL
   duration <- xmltop[['row']][[1]][['duration']][['text']][[1]]
   duration <- unclass(duration)[['value']]
   min<-duration
-  DATA<-cbind(mts,min)
-  names(DATA)<-c('mts','min')
-  return(list(mts,min))
+  D<-data.frame(cbind(mts,min))
+  names(D)<-c('mts','min')
+  return(D)
 }
