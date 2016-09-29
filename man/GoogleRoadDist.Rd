@@ -1,14 +1,14 @@
-\name{GoogleDisMatrix}
-\alias{GoogleDisMatrix}
+\name{GoogleRoadDist}
+\alias{GoogleRoadDist}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-   Distance Matrix from Google Maps
+   Road Distance between two points from Google Maps
 }
 \description{
-  Returns distance and time from Google Maps between two points in space, origin and destination.
+  Returns the road distance and time from Google Maps between two points in space, origin and destination.
 }
 \usage{
-  GoogleDisMatrix(orilat,orilon,deslat,deslon,mode,apikey,departure_time,arrival_time,transit_mode,transit_routing_preference)
+  GoogleRoadDist(orilat,orilon,deslat,deslon,mode,apikey,departure_time,arrival_time,transit_mode,transit_routing_preference)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -41,7 +41,7 @@ Your API Key from  \url{https://developers.google.com/places/web-service}
   %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-  A list of different elements string and numeric containing distance in meters and minutes of a trip between two points.
+  A list with two numeric elements containing distance in miles and minutes of a trip between two points.
   %%  \item{comp1 }{Description of 'comp1'}
   %%  \item{comp2 }{Description of 'comp2'}
   %% ...
@@ -50,7 +50,7 @@ Your API Key from  \url{https://developers.google.com/places/web-service}
   See the full documentation at \url{https://developers.google.com/maps/documentation/distance-matrix/}
 }
 \author{
-  Esteban Lopez
+  Esteban Lopez <lopezoch@illinois.edu>
 }
 \note{
   %%  ~~further notes~~
@@ -66,7 +66,7 @@ Your API Key from  \url{https://developers.google.com/places/web-service}
   orilon<--88.206985
   deslat<-40.109909
   deslon<--88.227235
-  mysearch<-GoogleDisMatrix(orilat,orilon,deslat,deslon)
+  mysearch<-GoogleRoadDist(orilat,orilon,deslat,deslon)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
