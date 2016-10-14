@@ -6,10 +6,11 @@ GoogleRoadDist<- function(orilat,orilon,deslat,deslon,mode='driving',apikey=NULL
   origin<-paste0(orilat,',',orilon)
   destination<-paste0(deslat,',',deslon)
   mode<-paste0(mode)
+  apikey<-paste0("&key=",as.character(apikey))
+  core<-"https://maps.googleapis.com/maps/api/distancematrix/xml?origins="
   
-  xml.url <- paste0('http://maps.googleapis.com/maps/api/distancematrix/xml?origins=',origin,'&destinations=',destination,'&mode=',mode,'&sensor=false')
-  
-  xmlfile <- XML::xmlTreeParse(xml.url)
+  xml.url <- paste0(core,origin,'&destinations=',destination,'&mode=',mode)
+  xmlfile <- XML::xmlTreeParse(RCurl::getURL(xml.url))
   xmltop <- XML::xmlRoot(xmlfile)
   distance <- xmltop[['row']][[1]][['distance']][['value']][[1]]
   distance <- as.numeric(unclass(distance)[['value']])
